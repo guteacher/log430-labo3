@@ -1,0 +1,32 @@
+"""
+Product stock controller
+SPDX - License - Identifier: LGPL - 3.0 - or -later
+Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
+"""
+
+from flask import jsonify
+from queries.read_product_stock import get_product_stock_by_id, get_stock_for_all_products
+from commands.write_product_stock import set_stock_for_product
+
+def set_product_stock(request):
+    """Set stock quantities of a product"""
+    payload = request.get_json() or {}
+    product_id = payload.get('product_id')
+    quantity = payload.get('quantity')
+    try:
+        result = set_stock_for_product(product_id, quantity)
+        return jsonify({'result': result}), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+def get_stock(product_id):
+    """Get stock quantities of a product"""
+    try:
+        product_stock = get_product_stock_by_id(product_id)
+        return jsonify(product_stock), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+def get_stock_overview():
+    """Get stock for all products"""
+    return get_stock_for_all_products()
