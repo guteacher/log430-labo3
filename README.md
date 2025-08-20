@@ -8,7 +8,7 @@
 ## ⚙️ Setup
 TODO
 
-### 1. Faites un fork et cloner le dépôt GitLab
+### 1. Faites un fork et clonez le dépôt GitLab
 ```bash
 git clone https://github.com/guteacher/log430-a25-labo3
 cd log430-a25-labo3
@@ -21,7 +21,11 @@ Suivez les mêmes étapes que dans le laboratoire 00.
 Installez Postman et importez la collection disponible dans /docs/collections.
 
 ## 🧪 Activités pratiques
-TODO
+- Ajoutez stock a Redis (insert) 
+- Ajoutez stock a Redis (delete) 
+- Ajoutez route GQL pour fournisseur
+- Ajoutez plus d'info aux articles dans redis (mapping)
+- Utilizes gql pour selccioner plus/moins info
 
 ## 📦 Livrables
 - Un fichier .zip contenant l’intégralité du code source du projet Labo 03.
