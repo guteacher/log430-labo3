@@ -12,7 +12,6 @@ from controllers.user_controller import create_user
 from controllers.product_stock_controller import get_stock, set_product_stock, get_stock_overview
  
 app = Flask(__name__)
-schema = Schema(query=Query)
 
 @app.get('/health')
 def health():
@@ -26,17 +25,17 @@ def post_orders():
     return create_order(request)
 
 @app.post('/products')
-def products():
+def post_products():
     """Create a new product based on information on request body"""
     return create_product(request)
 
 @app.post('/product_stocks')
-def product_stocks():
+def post_product_stocks():
     """Set product stock based on information on request body"""
     return set_product_stock(request)
 
 @app.post('/users')
-def users():
+def post_users():
     """Create a new user based on information on request body"""
     return create_user(request)
 
@@ -51,7 +50,7 @@ def get_order(order_id):
     """Get order with a given order_id"""
     return get_order(order_id)
 
-@app.post('/product_stocks/<int:product_id>')
+@app.get('/product_stocks/<int:product_id>')
 def get_product_stocks(product_id):
     """Get product stocks by product_id"""
     return get_stock(product_id)
@@ -78,8 +77,8 @@ def get_product_stocks_overview():
 @app.route('/product_stocks/graphql', methods=['POST'])
 def graphql_supplier():
     data = request.get_json()
+    schema = Schema(query=Query)
     result = schema.execute(data['query'], variables=data.get('variables'))
-    
     return jsonify({
         'data': result.data,
         'errors': [str(e) for e in result.errors] if result.errors else None

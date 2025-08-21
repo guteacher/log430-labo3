@@ -10,7 +10,6 @@ class Query(ObjectType):
     def resolve_product(self, info, id):
         redis_client = get_redis_conn()
         product_data = redis_client.hgetall(f"product_stock:{id}")
-        print(product_data)
         if product_data:
             return Product(
                 id=id,
