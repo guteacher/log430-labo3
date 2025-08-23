@@ -19,4 +19,5 @@ def test_health(client):
     assert result.get_json() == {'status':'ok'}
 
 def test_stock_flow(client):
+    print(client)
     assert "Le test n'est pas encore là" == 1

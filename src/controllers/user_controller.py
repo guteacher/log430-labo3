@@ -19,7 +19,7 @@ def create_user(request):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-def delete_user(user_id):
+def remove_user(user_id):
     """Delete user, use WriteUser model"""
     try:
         deleted = delete_user(user_id)

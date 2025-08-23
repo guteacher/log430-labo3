@@ -7,8 +7,8 @@ from graphene import Schema
 from schemas.query import Query
 from flask import Flask, request, jsonify
 from controllers.order_controller import create_order, remove_order, get_report_highest_spending_users, get_report_best_selling_products
-from controllers.product_controller import create_product
-from controllers.user_controller import create_user
+from controllers.product_controller import create_product, remove_product, get_product
+from controllers.user_controller import create_user, remove_user, get_user
 from controllers.product_stock_controller import get_stock, set_product_stock, get_stock_overview
  
 app = Flask(__name__)
@@ -24,31 +24,51 @@ def post_orders():
     """Create a new order based on information on request body"""
     return create_order(request)
 
+@app.delete('/orders/<int:order_id>')
+def delete_orders_id(order_id):
+    """Delete an order with a given order_id"""
+    return remove_order(order_id)
+
 @app.post('/products')
 def post_products():
     """Create a new product based on information on request body"""
     return create_product(request)
 
-@app.post('/product_stocks')
-def post_product_stocks():
-    """Set product stock based on information on request body"""
-    return set_product_stock(request)
+@app.delete('/products/<int:product_id>')
+def delete_orders_id(product_id):
+    """Delete a product with a given product_id"""
+    return remove_product(product_id)
 
 @app.post('/users')
 def post_users():
     """Create a new user based on information on request body"""
     return create_user(request)
 
-@app.delete('/orders/<int:order_id>')
-def delete_orders_id(order_id):
-    """Delete an order with a given order_id"""
-    return remove_order(order_id)
+@app.delete('/users/<int:user_id>')
+def delete_orders_id(user_id):
+    """Delete a user with a given user_id"""
+    return remove_user(user_id)
+
+@app.post('/product_stocks')
+def post_product_stocks():
+    """Set product stock based on information on request body"""
+    return set_product_stock(request)
 
 # Read routes (Queries) 
 @app.get('/orders/<int:order_id>')
 def get_order(order_id):
     """Get order with a given order_id"""
     return get_order(order_id)
+
+@app.get('/products/<int:product_id>')
+def get_order(product_id):
+    """Get product with a given product_id"""
+    return get_product(product_id)
+
+@app.get('/users/<int:user_id>')
+def get_order(user_id):
+    """Get user with a given user_id"""
+    return get_user(user_id)
 
 @app.get('/product_stocks/<int:product_id>')
 def get_product_stocks(product_id):

@@ -20,7 +20,7 @@ def create_product(request):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-def delete_product(product_id):
+def remove_product(product_id):
     """Delete product, use WriteProduct model"""
     try:
         deleted = delete_product(product_id)
