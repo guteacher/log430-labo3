@@ -1,1 +1,4 @@
-TODO
+@startuml 
+    [Gestion des commandes]
+    [Gestion des stocks]
+@enduml
