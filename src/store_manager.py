@@ -35,7 +35,7 @@ def post_products():
     return create_product(request)
 
 @app.delete('/products/<int:product_id>')
-def delete_orders_id(product_id):
+def delete_products_id(product_id):
     """Delete a product with a given product_id"""
     return remove_product(product_id)
 
@@ -45,7 +45,7 @@ def post_users():
     return create_user(request)
 
 @app.delete('/users/<int:user_id>')
-def delete_orders_id(user_id):
+def delete_users_id(user_id):
     """Delete a user with a given user_id"""
     return remove_user(user_id)
 
@@ -61,12 +61,12 @@ def get_order(order_id):
     return get_order(order_id)
 
 @app.get('/products/<int:product_id>')
-def get_order(product_id):
+def get_product(product_id):
     """Get product with a given product_id"""
     return get_product(product_id)
 
 @app.get('/users/<int:user_id>')
-def get_order(user_id):
+def get_user(user_id):
     """Get user with a given user_id"""
     return get_user(user_id)
 
