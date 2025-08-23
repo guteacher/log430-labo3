@@ -14,10 +14,12 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_DB: 0
-
+    networks:
+      - labo03-network
     depends_on:
       - mysql
       - redis
+
 
   mysql:
     image: mysql:8
@@ -27,6 +29,8 @@ services:
       MYSQL_DATABASE: labo02_db
       MYSQL_USER: labo02
       MYSQL_PASSWORD: labo02
+    networks:
+      - labo03-network
     ports:
       - "3306:3306"
     volumes:
@@ -36,7 +40,14 @@ services:
   redis:
     image: redis:7
     restart: unless-stopped
+    networks:
+      - labo03-network
     ports:
       - "6379:6379"
+
+networks:
+  labo03-network:
+    driver: bridge
+
 volumes:
   mysql_data:

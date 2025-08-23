@@ -93,8 +93,8 @@ def get_product_stocks_overview():
     rows = get_stock_overview()
     return jsonify(rows)
 
-# Vendor-managed inventory (VMI) route
-@app.route('/product_stocks/graphql', methods=['POST'])
+# Endpoint that allows suppliers to check stock
+@app.post('/product_stocks/graphql')
 def graphql_supplier():
     data = request.get_json()
     schema = Schema(query=Query)
