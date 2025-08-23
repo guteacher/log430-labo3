@@ -114,8 +114,8 @@ La correspondance entre les colonnes GraphQL et les données est définie dans `
 
 > 💡 **Question 5** : Quels résultats avez-vous obtenus en utilisant l’endpoint POST /product_stocks/graphql avec les améliorations ? Veuillez joindre la sortie de votre requête dans Postman afin d’illustrer votre réponse.
 
-### 6. Créez un autre conteneur pour effectuer un test de charge 
-Pour simuler un scénario plus proche de la réalité, exécutez `scripts/supplier_app.py` dans un conteneur séparé. Si vous avez besoin de précisions supplémentaires, référez-vous au diagramme `docs/uml/deployment.puml`. Vous pouvez vous appuyer sur les `Dockerfile` et le `docker-compose.yml` déjà présents dans le répertoire `scripts`.
+### 6. Créez un autre conteneur pour effectuer un test de communication
+Pour simuler un scénario plus proche de la réalité, exécutez `scripts/supplier_app.py` dans un conteneur séparé (comme si c'était sur le serveur de notre fournisseur). Si vous avez besoin de précisions supplémentaires, référez-vous au diagramme `docs/uml/deployment.puml`. Vous pouvez vous appuyer sur les `Dockerfile` et le `docker-compose.yml` déjà présents dans le répertoire `scripts`.
 
 > 💡 **Question 6** : Examinez attentivement le fichier `docker-compose.yml` du répertoire `scripts`, ainsi que celui situé à la racine du projet. Qu’ont-ils en commun ? Par quel mécanisme ces conteneurs peuvent-ils communiquer entre eux ? Veuillez joindre du code YAML afin d’illustrer votre réponse.
 
