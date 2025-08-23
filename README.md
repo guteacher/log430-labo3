@@ -24,22 +24,18 @@ Dans ce laboratoire, nous poursuivrons le développement de notre application de
 Nous ajouterons également un nouvel endpoint permettant à nos fournisseurs de consulter l'état de notre stock et nous envoyer de nouveaux articles pour le réapprovisionnement. Pour cet endpoint en particulier, nous permettrons l'utilisation de GraphQL, afin que le client puisse choisir précisément les colonnes qu'il souhaite chercher dans la base de données. Cela permet de résoudre un problème classique des API REST : renvoyer trop ou pas assez de données.
 
 ### 1. Faites un fork et clonez le dépôt GitLab
-
 ```bash
 git clone https://github.com/guteacher/log430-a25-labo3
 cd log430-a25-labo3
 ```
 
 ### 2. Préparez l'environnement de développement
-
-Suivez les mêmes étapes que dans le laboratoire 00.
+Suivez les mêmes étapes que dans le laboratoire 00. Créez un fichier .env.
 
 ### 3. Installez Postman
-
 Installez Postman et importez la collection disponible dans /docs/collections.
 
 ### 4. Comprenez les principes REST
-
 À ce stade, notre application est une API qui respecte presque tous les principes REST définis par Roy Fielding dans sa thèse de doctorat (2000) :
 
 - ✅ **Client–Serveur** : séparation claire entre client et serveur.
