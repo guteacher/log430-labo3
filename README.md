@@ -29,13 +29,19 @@ git clone https://github.com/guteacher/log430-a25-labo3
 cd log430-a25-labo3
 ```
 
-### 2. Préparez l'environnement de développement
+### 2. Créez un réseau Docker
+Éxecutez dans votre terminal:
+```bash
+docker network create labo03-network
+```
+
+### 3. Préparez l'environnement de développement
 Suivez les mêmes étapes que dans le laboratoire 00. Créez un fichier .env.
 
-### 3. Installez Postman
+### 4. Installez Postman
 Installez Postman et importez la collection disponible dans /docs/collections.
 
-### 4. Comprenez les principes REST
+### 5. Comprenez les principes REST
 À ce stade, notre application est une API qui respecte presque tous les principes REST définis par Roy Fielding dans sa thèse de doctorat (2000) :
 
 - ✅ **Client–Serveur** : séparation claire entre client et serveur.
@@ -108,7 +114,7 @@ La correspondance entre les colonnes GraphQL et les données est définie dans `
 
 > 💡 **Question 5** : Quels résultats avez-vous obtenus en utilisant l’endpoint POST /product_stocks/graphql avec les améliorations ? Veuillez joindre la sortie de votre requête dans Postman afin d’illustrer votre réponse.
 
-### 6. Effectuez un test de charge sur l’endpoint GraphQL
+### 6. Créez un autre conteneur pour effectuer un test de charge 
 Pour simuler un scénario plus proche de la réalité, exécutez `scripts/supplier_app.py` dans un conteneur séparé. Si vous avez besoin de précisions supplémentaires, référez-vous au diagramme `docs/uml/deployment.puml`. Vous pouvez vous appuyer sur les `Dockerfile` et le `docker-compose.yml` déjà présents dans le répertoire `scripts`.
 
 > 💡 **Question 6** : Examinez attentivement le fichier `docker-compose.yml` du répertoire `scripts`, ainsi que celui situé à la racine du projet. Qu’ont-ils en commun ? Par quel mécanisme ces conteneurs peuvent-ils communiquer entre eux ? Veuillez joindre du code YAML afin d’illustrer votre réponse.
