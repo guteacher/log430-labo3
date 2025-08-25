@@ -5,7 +5,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from db import get_sqlalchemy_session
-from models.product import Product
+from stocks.models.product import Product
 
 def get_product_by_id(product_id):
     """Get product by ID """

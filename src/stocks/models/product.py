@@ -5,7 +5,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from sqlalchemy import Column, Integer, Float, String
-from models.base import Base
+from orders.models.base import Base
 
 class Product(Base):
     __tablename__ = 'products'

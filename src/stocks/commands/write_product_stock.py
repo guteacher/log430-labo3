@@ -4,7 +4,7 @@ SPDX - License - Identifier: LGPL - 3.0 - or -later
 Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 from sqlalchemy import text
-from models.product_stock import ProductStock
+from stocks.models.product_stock import ProductStock
 from db import get_redis_conn, get_sqlalchemy_session
 
 def set_stock_for_product(product_id, quantity):

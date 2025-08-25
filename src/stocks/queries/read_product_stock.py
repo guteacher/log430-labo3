@@ -5,13 +5,13 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from db import get_sqlalchemy_session
-from models.product import Product
+from stocks.models.product import Product
 from stocks.models.product_stock import ProductStock
 
 def get_product_stock_by_id(product_id):
     """Get stock by product ID """
     session = get_sqlalchemy_session()
-    return session.query(ProductStock).filter_by(id=product_id).all()
+    return session.query(ProductStock).filter_by(product_id=product_id).all()
 
 def get_stock_for_all_products():
     """Get stock quantity for all products"""

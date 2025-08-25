@@ -5,7 +5,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from flask import jsonify
-from commands.write_product import insert_product, delete_product
+from stocks.commands.write_product import insert_product, delete_product
 from stocks.queries.read_product import get_product_by_id
 
 def create_product(request):

@@ -4,7 +4,7 @@ SPDX - License - Identifier: LGPL - 3.0 - or -later
 Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
-from models.user import User
+from orders.models.user import User
 from db import get_sqlalchemy_session
 
 def insert_user(name: str, email: str):

@@ -6,7 +6,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 
 from sqlalchemy import Column, Integer, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from models.base import Base
+from orders.models.base import Base
 
 class OrderItem(Base):
     __tablename__ = 'order_items'

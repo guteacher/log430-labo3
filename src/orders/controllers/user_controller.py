@@ -5,8 +5,8 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from flask import jsonify
-from commands.write_user import insert_user, delete_user
-from queries.read_user import get_user_by_id
+from orders.commands.write_user import insert_user, delete_user
+from orders.queries.read_user import get_user_by_id
 
 def create_user(request):
     """Create user, use WriteUser model"""

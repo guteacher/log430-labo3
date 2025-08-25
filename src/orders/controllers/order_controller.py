@@ -5,8 +5,8 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
 
 from flask import jsonify
-from commands.write_order import insert_order, delete_order
-from queries.read_order import get_order_by_id, get_best_selling_products, get_highest_spending_users
+from orders.commands.write_order import insert_order, delete_order
+from orders.queries.read_order import get_order_by_id, get_best_selling_products, get_highest_spending_users
 
 def create_order(request):
     """Create order, use WriteOrder model"""

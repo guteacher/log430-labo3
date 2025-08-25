@@ -1,6 +1,6 @@
 import graphene
 from graphene import ObjectType, String, Int
-from schemas.product import Product
+from stocks.schemas.product import Product
 from db import get_redis_conn
 
 class Query(ObjectType):       
