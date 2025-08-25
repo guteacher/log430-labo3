@@ -6,9 +6,9 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 
 import json
 from models.order import Order
-from models.product import Product
+from stocks.models.product import Product
 from models.order_item import OrderItem
-from commands.write_product_stock import check_in_items_to_stock, check_out_items_from_stock, update_stock_redis
+from stocks.commands.write_product_stock import check_in_items_to_stock, check_out_items_from_stock, update_stock_redis
 from db import get_sqlalchemy_session, get_redis_conn
 
 def insert_order(user_id: int, items: list):

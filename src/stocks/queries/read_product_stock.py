@@ -6,7 +6,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 
 from db import get_sqlalchemy_session
 from models.product import Product
-from models.product_stock import ProductStock
+from stocks.models.product_stock import ProductStock
 
 def get_product_stock_by_id(product_id):
     """Get stock by product ID """

@@ -6,7 +6,7 @@ Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 
 from flask import jsonify
 from queries.read_product_stock import get_product_stock_by_id, get_stock_for_all_products
-from commands.write_product_stock import set_stock_for_product
+from stocks.commands.write_product_stock import set_stock_for_product
 
 def set_product_stock(request):
     """Set stock quantities of a product"""
